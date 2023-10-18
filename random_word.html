@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            font-size: calc(100px + 2vmin);
+        }
+    </style>
+</head>
+<body>
+    <div id="word"></div>
+    <script>
+        const words = [
+            "said", "SAID", "Said", "his", "HIS", "His", "and", "AND", "And", "MOM", "mom", "Mom", "Splat", "SPLAT", 
+            "Splat", "the", "THE", "the"
+        ];
+
+        function displayRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            document.getElementById('word').textContent = words[randomIndex];
+        }
+
+        document.addEventListener('keydown', displayRandomWord);
+        displayRandomWord();
+    </script>
+</body>
+</html>
